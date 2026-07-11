@@ -31,11 +31,9 @@ def register(username, password, email):
     
     return "User registered successfully."
 
-register('siriiii', 'siriii45', 'sirik@example.com')
-
 
 # ----------- User login ------------
-def login(credential, password):
+def login(credential, log_password):
     '''
     Logs in a user using either their username or email and password.
     Returns a success message if login is successful,
@@ -44,8 +42,8 @@ def login(credential, password):
     users = read_csv(path)
 
     for user in users:
-        if (user['username'] == credential or user['email'] == credential) and user['password'] == password:
-            return "Login successful."
+        if (user['username'] == credential or user['email'] == credential) and user['password'] == log_password:
+            return "Login successful.", user
     return "Invalid credentials."
 
 # ----------- Get user by ID  ------------
