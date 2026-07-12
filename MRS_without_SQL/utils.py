@@ -35,11 +35,11 @@ def generate_id(filename):
         return int(id) + 1
 
 
-path = r"MRS_without_SQL\data\users.csv"
-user = {'id' : generate_id(path), 'username' : 'anirudh', 'password':'ani', 'email':'ani.r@example.com'}
-users = read_csv(path)
-users.append(user)
-print(users)
-write_rows(path, users)
+# path = r"MRS_without_SQL\data\users.csv"
+# user = {'id' : generate_id(path), 'username' : 'anirudh', 'password':'ani', 'email':'ani.r@example.com'}
+# users = read_csv(path)
+# users.append(user)
+# print(users)
+# write_rows(path, users)
 
 
