@@ -1,5 +1,7 @@
 from utils import *
 from users import *
+from movies import *
+from reviews import *
 
 # User Dashboard
 def dashboard(user):
@@ -14,10 +16,16 @@ def dashboard(user):
             exit()
 
         elif c == '1':
-            pass
+            movie_title = input("Enter the movie title: ")
+            movie_genre = input("Enter the movie genre: ")
+            movie_release_year = input("Enter the movie's release year: ")
+
+            add_movie(movie_title, movie_genre, movie_release_year)
+            print('Movie has been added successfully..')
 
         elif c == '2':
-            pass
+            print("--------------- LIST OF MOVIES ---------------")
+            view_all_movies()
 
         elif c == '3':
             pass
@@ -61,6 +69,5 @@ while True:
         else:
             print("Login failed..", output[0])
         
-
     else:
         print("Wrong Choice...")
