@@ -33,3 +33,12 @@ def get_movie_by_id(movie_id: str):
     return "Movie not found"
 
 # print(get_movie_by_id('3'))
+
+def generate_movie_id(movie_title: str):
+    movies = read_csv(path)
+    for m in movies:
+        if m['title'].lower().strip() == movie_title.lower().strip():
+            return m['id']
+    return "Movie not found"
+
+print(generate_movie_id('godavari'))
