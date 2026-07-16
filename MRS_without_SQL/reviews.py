@@ -14,7 +14,6 @@ def get_user_review(user_id):
 # print(get_user_review('2'))
 
 
-
 def add_review(u_id, m_id, m_rating, m_comment):
     reviews = read_csv(path)
 
