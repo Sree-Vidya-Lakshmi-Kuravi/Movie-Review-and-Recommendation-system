@@ -7,7 +7,7 @@ from reviews import *
 def dashboard(user):
     while True:
         print("Select a choice(0-5):")
-        print("0. Logout\n1. Add a movie\n2. List all movies\n3. Add a review\n4. Edit a review\n5. Delete a review")
+        print("0. Logout\n1. Add a movie\n2. List all movies\n3. Add a review\n4. View all reviews by a user\n5. Edit a review\n6. Delete a review")
 
         c = input("Enter the choice: ")
         
@@ -36,12 +36,15 @@ def dashboard(user):
             add_review(u_id, m_id, m_rating, m_comment)
             print("Your review has been added successfully..")
 
-
-
         elif c == '4':
-            pass
+            u_id = input("Enter the user ID: ")
+            print(f"Reviews by the user with User ID: {u_id}")
+            view_user_review(u_id)
 
         elif c == '5':
+            pass
+
+        elif c == '6':
             pass
 
         else:
