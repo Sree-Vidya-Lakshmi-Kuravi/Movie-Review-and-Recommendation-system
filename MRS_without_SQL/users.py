@@ -1,6 +1,6 @@
 from utils import *
 
-path = r'MRS_without_SQL\data\users.csv'
+users_file = r'E:\Vidya Career\Movie_Review_Project\MRS_without_SQL\data\users.csv'
 
 def register(username, password, email):
     '''
@@ -11,7 +11,7 @@ def register(username, password, email):
     if not username or not password or not email:
         return "All fields are required."
     
-    users = read_csv(path)
+    users = read_csv(users_file)
     
     for user in users:
         if user['username'] == username:
@@ -20,16 +20,16 @@ def register(username, password, email):
             return "Email already registered."
     
     new_user = {
-        'id': generate_id(path),
+        'id': generate_id(users_file),
         'username': username,
         'password': password,
         'email': email
     }
     
-    users.append(new_user)
-    write_row(path, new_user)
-    
+    write_row(users_file, new_user)
     return "User registered successfully."
+
+# register("sailaja2", "saila", "sail2.k@gmail.com")
 
 
 # ----------- User login ------------
@@ -39,7 +39,7 @@ def login(credential, log_password):
     Returns a success message if login is successful,
     or an error message if the credentials are invalid.
     '''
-    users = read_csv(path)
+    users = read_csv(users_file)
 
     for user in users:
         if (user['username'] == credential or user['email'] == credential) and user['password'] == log_password:
@@ -48,7 +48,7 @@ def login(credential, log_password):
 
 # ----------- Get user by ID  ------------
 def get_user_by_id(user_id):
-    users = read_csv(path)
+    users = read_csv(users_file)
     
     for user in users:
         if user['id'] == str(user_id):
@@ -57,7 +57,7 @@ def get_user_by_id(user_id):
 
 # ----------- Get user by username ------------
 def get_user_by_username(username):
-    users = read_csv(path)
+    users = read_csv(users_file)
     
     for user in users:
         if user['username'] == username:
@@ -66,7 +66,7 @@ def get_user_by_username(username):
 
 # ----------- Get user by email ------------
 def get_user_by_email(email):
-    users = read_csv(path)
+    users = read_csv(users_file)
     
     for user in users:
         if user['email'] == email:
