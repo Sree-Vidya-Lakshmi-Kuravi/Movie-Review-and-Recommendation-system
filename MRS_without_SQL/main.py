@@ -13,7 +13,7 @@ def dashboard(user):
         
         if c == '0':
             print("You have logged out successfully...")
-            exit()
+            return
 
         elif c == '1':
             movie_title = input("Enter the movie title: ")
@@ -50,7 +50,10 @@ def dashboard(user):
             edit_review(review_id, new_rating, new_comment)
 
         elif c == '6':
-            pass
+            review_id = input("Enter the review ID: ")
+
+            delete_review(review_id)
+            print("Review has been deleted successfully..")
 
         else:
             print("Invalid Choice. Please enter your choice between 0-5")
